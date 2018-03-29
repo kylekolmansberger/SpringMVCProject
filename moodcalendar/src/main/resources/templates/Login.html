@@ -4,21 +4,13 @@
     <title>Login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body>
-	<h1>Log In To Mood Calendar</h1>
-    <form action="#" th:action="@{/}" th:object="${login}" method="post">
-    	<p>Username: <input type="text" th:field="*{username}" /></p>
-        <p>Password: <input type="text" th:field="*{password}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-        <br>
-        <button id="myButton" class="float-left submit-button" >Register</button>
-
-        <script type="text/javascript">
-            document.getElementById("myButton").onclick = function () {
-            location.href = "localhost:8080/register";
-            };
-        </script>
-        
-    </form>
-</body>
+    <body>
+	<h1>Log In</h1>
+    <form action="#" th:action="@{/login}" th:object="${User}" method="post">
+            <p>Username: <input type="text" th:field="*{username}" /></p>
+            <p>Password: <input type="text" th:field="*{password}" /></p>
+             
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+    </body>
 </html> 
