@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BlogEntry</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+    <body>
+	<h1>Blog Post</h1>
+    <form action="#" th:action="@{/blogentry}" th:object="${blogentry}" method="post">
+            <p>Date: <input type="text" th:field="*{date}" /></p>
+            <p>Mood: <input type="text" th:field="*{mood}" /></p>
+            <p>Blog Entry(Max 1000 Characters): <input type="textarea" th:field="*{blogEntry}" maxlength="1000" size="35"/></p>
+            
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+    </body>
+</html>
+
+

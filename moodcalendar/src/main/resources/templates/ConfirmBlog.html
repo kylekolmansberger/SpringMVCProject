@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ConfirmBlog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Here's Your Blog Post!</h1>
+    <p th:text="'Date: ' + ${blog.date}" />
+    <p th:text="'Mood: ' + ${blog.mood}" />
+    <p th:text="'Post: ' + ${blog.blogEntry}" />
+    
+</body>
+</html>

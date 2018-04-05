@@ -13,20 +13,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class RegisterController {
+public class BlogPostController {
     
-    @GetMapping("/register")
-    public String Register(Model model){
+    @GetMapping("/blogentry")
+    public String BlogEntry(Model model){
         
-        model.addAttribute("register", new Register());
+        model.addAttribute("blogentry", new BlogEntry());
         
-        return "Register";
+        return "BlogEntry";
     }
     
-    @PostMapping("/register")
-    public String RegisterVerify(@ModelAttribute Register register){
+    @PostMapping("/blogentry")
+    public String BlogConfirm(@ModelAttribute BlogEntry blog){
         
-        return "RegisterVerify";
+        
+        return "ConfirmBlog";
     }
+    
     
 }
