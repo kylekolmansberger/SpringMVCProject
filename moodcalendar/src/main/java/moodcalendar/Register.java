@@ -1,7 +1,12 @@
 
 package moodcalendar;
 
+
+
 public class Register {
+    
+
+    Long id;
     String username;
     String password;
     String confirmPassword;
