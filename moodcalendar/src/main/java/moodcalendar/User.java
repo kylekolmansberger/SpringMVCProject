@@ -1,9 +1,33 @@
 package moodcalendar;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class User {
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    Long id;
     String username;
     String password;
+    
+    protected User(){}
+    
+    public User(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
+    
+    
+     public Long getId(){
+        return id;
+    }
+    public void setId(Long id){
+        this.id = id;
+    }
     
     public String getUsername(){
         return username;
@@ -20,11 +44,10 @@ public class User {
     }
     
     
-    
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        return String.format("%s,%s", username, password);
+    }
     
 }
 

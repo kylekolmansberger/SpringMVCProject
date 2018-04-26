@@ -5,11 +5,28 @@
  */
 package moodcalendar;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class BlogEntry {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    Long id;
     
-    String blogEntry;
     String mood;
     String date;
+    String blogEntry;
+    
+    protected BlogEntry(){}
+    
+    public BlogEntry(String date, String mood, String blogEntry){
+        this.date = date;
+        this.mood = mood;
+        this.blogEntry = blogEntry;
+    }
     
 
     public String getDate() {
@@ -32,6 +49,24 @@ public class BlogEntry {
     public void setMood(String mood) {
         this.mood = mood;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
     
+    @Override
+    public String toString(){
+        
+        return String.format("%s\n %s\n %s", date, mood, blogEntry);       
+    }
+    
+    public String moodToString(){
+        
+        return String.format("%s",mood);
+    }
     
 }

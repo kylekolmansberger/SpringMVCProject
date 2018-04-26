@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>WelcomeUser</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Welcome to your page!</h1>
+        <p>Here you will be able to create your own blog posts</p>
+
+        <p><a th:href="@{/blogentry}">Post A Blog Entry!</a></p>
+
+        <p><a th:href="@{/findblogdate}">Search For Existing Blogs!</a></p>
+
+        <p><a th:href="@{/login}">Logout</a></p>
+</body>
+</html> 

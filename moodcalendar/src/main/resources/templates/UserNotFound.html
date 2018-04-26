@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>RegisterVerification</title>
+    <title>UserNotFound</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-    <body>
-	<h1>Thank You For Registering!</h1>
-        <p>You will now be able to login with the username and password you specified</p>
+<body>
+	<h1>Sorry!</h1>
+        <p>The Username you specified is not yet created!</p>
         <p><a th:href="@{/login}">Login Here</a></p>
-
-    </body>
+        <p><a th:href="@{/register}">Register Here</a></p>
+</body>
 </html> 

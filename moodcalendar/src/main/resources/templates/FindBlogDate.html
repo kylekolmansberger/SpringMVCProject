@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BlogByDate</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>You Can Search Blogs By Date From Here!</h1>
+        <form action="#" th:action="@{/findblogdate}" th:object="${findblogdate}" method="post">
+            <p>Date(mm/dd/yyyy): <input type="text" th:field="*{date}" /></p>
+
+            <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        </form>
+        <p><a th:href="@{/homepage}">Back to Homepage</a></p>
+</body>
+</html> 

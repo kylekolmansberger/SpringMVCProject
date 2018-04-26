@@ -7,12 +7,15 @@
     <body>
 	<h1>Blog Post</h1>
     <form action="#" th:action="@{/blogentry}" th:object="${blogentry}" method="post">
-            <p>Date: <input type="text" th:field="*{date}" /></p>
-            <p>Mood: <input type="text" th:field="*{mood}" /></p>
-            <p>Blog Entry(Max 1000 Characters): <input type="textarea" th:field="*{blogEntry}" maxlength="1000" size="35"/></p>
+            <p>Date(mm/dd/yyyy): <input type="text" th:field="*{date}" th:required="required" /></p>
+            <p>Mood: <input type="text" th:field="*{mood}" th:required="required" /></p>
+            <p>Blog Entry(Max 1500 Characters):</p> 
+            <p><textarea rows = "15" cols="100" th:field="*{blogEntry}" th:required="required" ></textarea></p>
             
             <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
         </form>
+        
+        <p><a th:href="@{/homepage}">Back to Homepage</a></p>
     </body>
 </html>
 
