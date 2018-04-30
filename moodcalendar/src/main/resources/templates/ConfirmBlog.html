@@ -7,9 +7,9 @@
 <body>
 	<h1>Here's Your Blog Post!</h1>
         
-    <p th:text="'Date: ' + ${blogentry.date}" />
-    <p th:text="'Mood: ' + ${blogentry.mood}" />
-    <p th:text="'Post: ' + ${blogentry.blogEntry}" />
+    <p th:text="'Date: ' + ${blogEntry.date}" />
+    <p th:text="'Mood: ' + ${blogEntry.mood}" />
+    <p th:text="'Blog: ' + ${blogEntry.blog}" />
     <p><a th:href="@{/homepage}">Back to Homepage</a></p>
     
 </body>

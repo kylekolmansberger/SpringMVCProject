@@ -12,23 +12,29 @@ import javax.persistence.Id;
 
 @Entity
 public class BlogEntry {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     Long id;
-    
-    String mood;
     String date;
-    String blogEntry;
+    String mood;
+    String blog;
     
     protected BlogEntry(){}
     
-    public BlogEntry(String date, String mood, String blogEntry){
+    public BlogEntry(String date, String mood, String blog){
         this.date = date;
         this.mood = mood;
-        this.blogEntry = blogEntry;
+        this.blog = blog;
     }
     
-
+     public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public String getDate() {
         return date;
     }
@@ -36,32 +42,28 @@ public class BlogEntry {
         this.date = date;
     }
     
-    public String getBlogEntry() {
-        return blogEntry;
-    }
-    public void setBlogEntry(String blogEntry) {
-        this.blogEntry = blogEntry;
-    }
-
     public String getMood() {
         return mood;
     }
     public void setMood(String mood) {
         this.mood = mood;
     }
-
-    public Long getId() {
-        return id;
+    
+    public String getBlog() {
+        return blog;
+    }
+    public void setBlog(String blog) {
+        this.blog = blog;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    
+
+   
     
     @Override
     public String toString(){
         
-        return String.format("%s\n %s\n %s", date, mood, blogEntry);       
+        return String.format("%s\n %s\n %s", date, mood, blog);       
     }
     
     public String moodToString(){

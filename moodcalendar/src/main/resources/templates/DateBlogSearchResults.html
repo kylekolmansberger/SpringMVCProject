@@ -5,7 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Blog Search Results by Date Appear In Command Line Right Now</h1>
+    <div th:if="${not #lists.isEmpty(blogentrys)}">
+	<h1>Here are your corresponding blogs</h1>
+        <table class="table table-striped">
+      <tr>  
+        <th>DATE</th>
+        <th>MOOD</th>
+        <th>BLOG</th>
+      </tr>
+      <tr th:each="blogEntry : ${blogentrys}">
+        <td th:text="${blogEntry.date}">Date</td>
+        <td th:text="${blogEntry.mood}">Mood</td>
+        <td th:text="${blogEntry.blog}">Blog</td>
+        </tr>
+        </table>
+    </div>
+    <div th:if="${#lists.isEmpty(blogentrys)}">
+        <h1>There were no blogs that matched your query</h1>
+    </div>
+        <p><a th:href="@{/findblogdate}">Back to Search Page</a></p>
+        <p><a th:href="@{/homepage}">Back to Homepage</a></p>
 
 </body>
 </html> 

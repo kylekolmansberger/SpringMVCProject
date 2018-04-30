@@ -5,6 +5,7 @@
  */
 package moodcalendar;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,9 +31,8 @@ public class BlogPostController {
     }
     @PostMapping("/blogentry")
     public String BlogConfirm(@ModelAttribute BlogEntry blogentry){
-        System.out.println("HI");
         try{
-        blogRepo.save(new BlogEntry(blogentry.date, blogentry.mood, blogentry.blogEntry));
+        blogRepo.save(new BlogEntry(blogentry.date, blogentry.mood, blogentry.blog));
         System.out.println("Blog Saved");
         
         }
@@ -58,14 +58,10 @@ public class BlogPostController {
         return "FindBlogDate";
     }
     @PostMapping("/findblogdate")
-    public String DateBlogResults(@ModelAttribute FindBlogDate findblogdate){
+    public String DateBlogResults(@ModelAttribute FindBlogDate findblogdate, Model model){
         
-        List<BlogEntry> dateList = blogRepo.findByDate(findblogdate.date);
         
-        System.out.println("HI");
-        //temp dislay of Results To Console
-        ResultPrint(dateList);
-        
+        model.addAttribute("blogentrys", blogRepo.findByDate(findblogdate.date));
         
         return "DateBlogSearchResults";
     }
@@ -80,19 +76,12 @@ public class BlogPostController {
         return "FindBlogMood";
     }
     @PostMapping("/findblogmood")
-    public String MoodBlogResults(@ModelAttribute FindBlogMood findblogmood){
+    public String MoodBlogResults(@ModelAttribute FindBlogMood findblogmood, Model model){
+        
+        model.addAttribute("blogentrys", blogRepo.findByMood(findblogmood.mood));
         
         return "MoodBlogSearchResults";
     }
-    
-    public void ResultPrint(List<BlogEntry> list){
-        
-        for(BlogEntry blogentry: list){
-            System.out.println(blogentry.toString());
-            
-        }
-        
-        
-    }
+   
     
 }
